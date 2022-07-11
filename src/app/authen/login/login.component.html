@@ -1,0 +1,20 @@
+<p>login works!</p>
+<form [formGroup]="login" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email">
+    <input type="text" formControlName="password">
+    <button type="submit">Submit</button> 
+
+</form>
+
+<!-- {{list | filterByKey : 'hai' : 'name' | json}} -->
+
+
+<!-- <div *ngFor="let item of list | filterByKey : 'hai': 'name'">
+
+    <div>
+        name: {{item.name}}
+    </div>
+    <div>
+        old: {{item.old}}
+    </div>
+</div> -->

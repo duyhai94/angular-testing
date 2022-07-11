@@ -1,17 +1,25 @@
 import { TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let mockService;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
+  });
+
+  beforeEach( () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
   });
 
   it('should create the app', () => {
@@ -26,10 +34,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('myAngular');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('myAngular app is running!');
-  });
 });
